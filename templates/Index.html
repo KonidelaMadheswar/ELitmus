@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<style>
+	h1{
+		text-align: center;
+		display: flex;
+		background-color: rgba(21, 21, 20, 0.226);
+		justify-content: space-between;
+		padding: 10px;
+		color:#fff;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	}
+	
+	body{
+		background: url('https://picsum.photos/id/1025/1920/1080') no-repeat center center fixed;
+		background-size: cover;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="number"] {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+		border: none;
+		border-radius: 4px;
+		background-color: #f2f2f255;
+		font-size: medium;
+		font-weight: bold;
+		color: #333;
+	}
+	
+	input[type="submit"] {
+		background-color: #04a1f6c8;
+		color: white;
+		font-size: 16px;
+		font-weight: bold;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		width:auto;
+		transition: background-color 0.3s ease;
+	}
+	
+	input[type="submit"]:hover {
+		background-color: #3e8e41;
+	}
+	
+	label {
+		display: block;
+		margin-bottom: 5px;
+		font-weight: bold;
+		color: #fff;
+	}
+	
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 10px;
+	}
+	
+	.col-25 {
+		flex: 25%;
+	}
+	
+	.col-75 {
+		flex: 75%;
+	}
+	
+	.formContainer {
+		background-color: rgba(31, 29, 29, 0.179);
+		padding: 20px;
+		border-radius: 10px;
+		border-style: groove;
+	}
+	
+	.buttonContainer {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	
+	.buttonContainer a {
+		background-color: #4CAF50;
+		color: white;
+		font-size: 16px;
+		font-weight: bold;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		text-decoration: none;
+		transition: background-color 0.3s ease;
+	}
+	
+	.buttonContainer a:hover {
+		background-color: #3e8e41;
+	}
+	.admin a{
+		text-decoration: none;
+		font-size: 20px;
+		color: #fff;
+	}
+	.admin a:hover{
+		color: rgba(8, 90, 172, 0.808);
+	}
+</style>
+</head>
+
+<body>
+	<h1>Soft Skills Assessment
+		<div class="admin">
+			<a href="/login">Admin Login</a>
+		</div>
+	</h1>
+	
+	<div style="padding: 2%">
+	<div class="formContainer" style="padding: 2%">
+		<form action="{{url_for('index')}}" method="post">
+			<div class="row">
+				<div class="col-25">
+			<label for="user">Name</label>
+				</div>
+				<div class="col-75">
+			<input type="text" name="name" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+			<label for="email">Email</label>
+				</div>
+				<div class="col-75">
+			<input type="email" name="email" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class = "col-25">
+			<label for="pwd">Phone Number</label>
+				</div>
+				<div class = "col-75">
+			<input type="tel" name="phno" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+			<label for="age">Age</label>
+				</div>
+				<div class="col-75">
+			<input type="number" name="age" required>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+			<input type="submit" name="submit" style="margin: 0 auto" value="Play Game">
+				</div>
+		</form>
+		
+		</div>
+	</div>
+</body>
+</html>

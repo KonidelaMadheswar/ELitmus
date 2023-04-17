@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+</head>
+
+<body>
+	<style>
+		/* Apply some general styles to the body */
+		body {
+		  margin: 0;
+		  padding: 0;
+		  font-family: sans-serif;
+		  background-image: url('https://img.freepik.com/free-photo/volume-abstract-graphic-loneliness-desk_1258-258.jpg?size=626&ext=jpg&ga=GA1.1.985050129.1681445957&semt=ais');
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		}
+	
+		/* Style the login form */
+		.formContainer {
+		  max-width: 500px;
+		  margin: 0 auto;
+		  padding: 20px;
+		  background-color: rgba(0, 0, 0, 0.12);
+		  border-radius: 5px;
+		  border-color:blue;
+		  border-style: groove;
+		}
+	
+		/* Style the form labels */
+		label {
+		  display: block;
+		  margin-bottom: 5px;
+		  font-weight: bold;
+		}
+	
+		/* Style the form inputs */
+		input[type="name"],
+		input[type="password"] {
+		  display: block;
+		  width: 100%;
+		  padding: 8px;
+		  margin-bottom: 10px;
+		  border: 1px solid #e48f0500;
+		  background-color: rgba(0, 0, 0, 0.171);
+		  border-radius: 5px;
+		  box-sizing: border-box;
+		}
+	
+		/* Style the submit button */
+		input[type="submit"] {
+		  display: block;
+		  margin: 0 auto;
+		  padding: 10px 20px;
+		  background-color: #11121166;
+		  color: #fffffff5;
+		  border: none;
+		  border-radius: 5px;
+		  cursor: pointer;
+		  transition: background-color 0.3s;
+		}
+	
+		/* Change the background color of the submit button on hover */
+		input[type="submit"]:hover {
+		  background-color: #3e8e41;
+		}
+	
+		/* Style the alert message */
+		.alert {
+		  padding: 5px;
+		  margin: 50px;
+		  background-color: #080d0d29;
+		  color: white;
+		  position: relative;
+		}
+	
+		/* Style the close button */
+		.closebtn {
+		  position: absolute;
+		  top: 0;
+		  right: 0;
+		  padding: 5px;
+		  color: rgba(229, 17, 17, 0.584);
+		  font-weight: bold;
+		  font-size: 22px;
+		  line-height: 20px;
+		  cursor: pointer;
+		  transition: 0.3s;
+		}
+	
+		/* Change the color of the close button on hover */
+		.closebtn:hover {
+		  color: black;
+		}
+	  </style>
+
+  {% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		{% for message in messages %}
+		<div class="alert">
+		  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			<p align="center">{{ message }}</p>
+		</div>
+		{% endfor %}
+	  {% endif %}
+	{% endwith %}
+	  {% if info %}
+	  <div class="alert">
+		  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			<p align="center">{{ info }}</p>
+		</div>
+	  {% endif %}
+
+<div style="padding: 2%">
+	<div class="formContainer" style="padding: 2%">
+		<form action="{{url_for('login')}}" method="post">
+			<div class="row">
+				<div class="col-25">
+			<label for="user">Email</label>
+				</div>
+				<div class="col-75">
+			<input type="name" name="user" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class = "col-25">
+			<label for="pwd">Password</label>
+				</div>
+				<div class = "col-75">
+			<input type="password" name="pwd" required>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+			<input type="submit" name="submit" style="margin: 0 auto">
+				</div>
+		</form>
+		
+	</div>	
+	</div>
+</body>
+</html>

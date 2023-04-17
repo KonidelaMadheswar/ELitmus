@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Score</title>
+<style>
+	body {
+  background-image: url('https://media.istockphoto.com/id/1333701057/photo/credit-score-concept.jpg?b=1&s=170667a&w=0&k=20&c=2Ctwx1b0pU5dJH6lQCJ0IJyKw-XyOQF4NRkE_BLrqkc=');
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+p {
+  font-size: 24px;
+  font-weight: bold;
+  color: beige;
+  margin-top: 50px;
+}
+
+button {
+  background-color: rgba(245, 245, 220, 0.792);
+  color: rgb(22, 21, 21);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+a{
+	text-decoration: none;
+}
+button:hover {
+  background-color: #3e8e41;
+}
+
+</style>
+</head>
+
+<body>
+	
+	<p>Your Score : {{score}} 
+	<br>Time Taken : {{time}}</p>
+	<button><a href="/">Play Again</a></button>
+</body>
+</html>
